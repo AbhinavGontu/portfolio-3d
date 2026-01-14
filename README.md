@@ -52,39 +52,41 @@ A clean, interactive portfolio featuring a frosted glass 3D centerpiece, One Pie
 
 ## Project Structure
 
-**portfolio-3d/**
-├── **app/**
-│   ├── **contact/**
+```text
+portfolio-3d/
+├── app/
+│   ├── contact/
 │   │   └── page.tsx
-│   ├── **projects/**
+│   ├── projects/
 │   │   └── page.tsx
 │   ├── favicon.ico
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
-├── **components/**
-│   ├── **3d/**
+├── components/
+│   ├── 3d/
 │   │   ├── FloatingElements.tsx
 │   │   ├── HeroObject.tsx
 │   │   ├── OnePieceElements.tsx
 │   │   ├── ParticleSystem.tsx
 │   │   └── Scene.tsx
-│   └── **ui/**
+│   └── ui/
 │       ├── Footer.tsx
 │       ├── Navigation.tsx
 │       ├── ProjectCard.tsx
 │       └── Timeline.tsx
-├── **lib/**
-│   ├── **data/**
+├── lib/
+│   ├── data/
 │   │   ├── experience.json
 │   │   └── projects.json
-│   ├── **hooks/**
+│   ├── hooks/
 │   │   ├── useMediaQuery.ts
 │   │   ├── usePerformanceMonitor.ts
 │   │   └── useScrollPosition.ts
-│   └── **utils/**
+│   └── utils/
 │       └── constants.ts
-└── **public/**
+└── public/
+```
 
 ## Deployment
 
