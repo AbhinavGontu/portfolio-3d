@@ -53,14 +53,38 @@ A clean, interactive portfolio featuring a frosted glass 3D centerpiece, One Pie
 ## Project Structure
 
 **portfolio-3d/**
-├── **app/** (Next.js App Router pages)
+├── **app/**
+│   ├── **contact/**
+│   │   └── page.tsx
+│   ├── **projects/**
+│   │   └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
 ├── **components/**
-│   ├── **3d/** (Three.js 3D components)
-│   └── **ui/** (UI components)
+│   ├── **3d/**
+│   │   ├── FloatingElements.tsx
+│   │   ├── HeroObject.tsx
+│   │   ├── OnePieceElements.tsx
+│   │   ├── ParticleSystem.tsx
+│   │   └── Scene.tsx
+│   └── **ui/**
+│       ├── Footer.tsx
+│       ├── Navigation.tsx
+│       ├── ProjectCard.tsx
+│       └── Timeline.tsx
 ├── **lib/**
-│   ├── **data/** (Static content)
-│   └── **hooks/** (Custom React hooks)
-└── **public/** (Static assets)
+│   ├── **data/**
+│   │   ├── experience.json
+│   │   └── projects.json
+│   ├── **hooks/**
+│   │   ├── useMediaQuery.ts
+│   │   ├── usePerformanceMonitor.ts
+│   │   └── useScrollPosition.ts
+│   └── **utils/**
+│       └── constants.ts
+└── **public/**
 
 ## Deployment
 
