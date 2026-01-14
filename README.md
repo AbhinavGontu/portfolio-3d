@@ -8,7 +8,7 @@
 
 A clean, interactive portfolio featuring a frosted glass 3D centerpiece, One Piece themed elements, and smooth animations.
 
-**Live Demo**: [portfolio-3d.vercel.app](https://portfolio-3d.vercel.app)
+**Live Demo**: [portfolio-3d-psi-five.vercel.app](https://portfolio-3d-psi-five.vercel.app/)
 
 ## Screenshots
 
