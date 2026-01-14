@@ -1,0 +1,41 @@
+[
+    {
+        "id": "eventual-consistency",
+        "title": "Eventual Consistency Framework",
+        "description": "Implemented SAGA pattern for distributed transactions across microservices with compensating transactions and idempotency guarantees, reducing payment failures by 18%.",
+        "tags": [
+            "Java",
+            "Spring Boot",
+            "Kafka",
+            "Microservices",
+            "SAGA Pattern"
+        ],
+        "image": "/images/eventual-consistency.jpg",
+        "link": "#",
+        "github": "#",
+        "featured": true,
+        "metrics": {
+            "reliability": "18% fewer failures",
+            "pattern": "SAGA + Idempotency"
+        }
+    },
+    {
+        "id": "rate-limiter",
+        "title": "Multi-Tenant SaaS Rate Limiter",
+        "description": "Distributed rate limiting system using token bucket algorithm, handling 50K+ requests/sec with multi-threaded architecture.",
+        "tags": [
+            "Java",
+            "Redis",
+            "Docker",
+            "Multi-threading"
+        ],
+        "image": "/images/rate-limiter.jpg",
+        "link": "#",
+        "github": "#",
+        "featured": false,
+        "metrics": {
+            "throughput": "50K+ req/sec",
+            "scalability": "5x load spikes"
+        }
+    }
+]

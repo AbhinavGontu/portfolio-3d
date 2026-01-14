@@ -1,65 +1,137 @@
-import Image from "next/image";
+/**
+ * Homepage Component - Main Portfolio Landing Page
+ * 
+ * This file orchestrates the entire portfolio experience, combining:
+ * - 3D graphics (Three.js via React Three Fiber)
+ * - Smooth animations (Framer Motion)
+ * - Dynamic content (JSON data sources)
+ * - Responsive design (Tailwind utility classes)
+ * 
+ * Marked as "use client" because it contains interactive elements and
+ * client-side state management (animations, 3D rendering).
+ */
+"use client";
+
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { ProjectCard } from "@/components/ui/ProjectCard";
+import { Timeline } from "@/components/ui/Timeline";
+import { HeroObject } from "@/components/3d/HeroObject";
+import { ParticleSystem } from "@/components/3d/ParticleSystem";
+import { FloatingElements } from "@/components/3d/FloatingElements";
+import projects from "@/lib/data/projects.json";
+import experience from "@/lib/data/experience.json";
+
+/**
+ * Dynamic import strategy for 3D Scene component
+ * 
+ * Why we disable SSR (ssr: false):
+ * - Three.js requires browser APIs (WebGL, canvas) that don't exist in Node.js
+ * - Attempting to render 3D content server-side would crash the build process
+ * - The Scene component uses window, document, and navigator APIs
+ * 
+ * Performance impact:
+ * - Scene code (~60KB) is only downloaded when needed, not in initial bundle
+ * - This keeps the initial JavaScript bundle small for faster First Contentful Paint
+ * - Users on slow connections get text content quickly, 3D scene loads progressively
+ * 
+ * The .then() transform extracts the named export 'Scene' and makes it the
+ * default export for this dynamic import, maintaining clean import syntax.
+ */
+const Scene = dynamic(() => import("@/components/3d/Scene").then((mod) => ({ default: mod.Scene })), {
+  ssr: false,
+});
+
+/**
+ * Animation variant configuration for fade-in-up effect
+ * 
+ * This reusable animation pattern is applied to multiple elements throughout
+ * the page for consistent motion design.
+ * 
+ * initial: Starting state (invisible, 60px below final position)
+ * - opacity: 0 makes element invisible
+ * - y: 60 moves element down by 60 pixels
+ * 
+ * animate: End state (fully visible, at natural position)
+ * - opacity: 1 makes element fully visible
+ * - y: 0 returns element to its natural position
+ * 
+ * transition: How the animation progresses
+ * - duration: 0.6 seconds (600ms) for smooth but snappy motion
+ * - ease: Custom cubic-bezier curve [0.6, -0.05, 0.01, 0.99]
+ *   This creates a "snap" effect - starts fast, slight bounce, settles smoothly
+ *   The negative value creates anticipation, making animation feel more natural
+ * 
+ * This animation pattern is derived from Google's Material Design motion guidelines
+ * and Apple's Human Interface Guidelines for satisfying, predictable animations.
+ */
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+};
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="relative">
+      {/* 3D Background Scene */}
+      <Scene>
+        <HeroObject />
+        <ParticleSystem />
+        <FloatingElements />
+      </Scene>
+
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen flex items-center justify-center relative z-10">
+        <div className="container mx-auto px-6 py-20">
+          <motion.div
+            initial="initial"
+            animate="animate"
+            variants={{
+              animate: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            className="max-w-4xl mx-auto text-center"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold mb-6">
+              Hi, I'm <span className="gradient-text">Abhinav Gontu</span>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeInUp}
+              className="text-xl md:text-2xl text-foreground/80 mb-8"
+            >
+              Software Engineer | Full Stack Developer
+            </motion.p>
+
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto"
+            >
+              Building high-scale distributed platforms with React, Next.js, TypeScript, and cloud architecture.
+            </motion.p>
+
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/projects"
+                className="px-8 py-3 bg-primary-500 hover:bg-primary-600 rounded-full text-white font-semibold transition-colors"
+              >
+                View Projects
+              </Link>
+              <Link
+                href="/contact"
+                className="px-8 py-3 glass-effect hover:bg-white/10 rounded-full font-semibold transition-all"
+              >
+                Get in Touch
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

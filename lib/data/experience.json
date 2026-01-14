@@ -1,0 +1,37 @@
+[
+    {
+        "id": "zenith",
+        "company": "Zenith Technology LLC",
+        "position": "Software Engineer",
+        "location": "San Antonio, TX",
+        "period": "Feb 2025 – Oct 2025",
+        "highlights": [
+            "Designed intelligent conversational AI platform with 85% autonomous query resolution",
+            "Architected scalable RAG architecture serving 50K+ daily interactions",
+            "Reduced support costs by $180K annually through automation"
+        ]
+    },
+    {
+        "id": "xlysi",
+        "company": "XLYSI LLC",
+        "position": "Software Engineer",
+        "location": "Chicago, IL",
+        "period": "Jan 2023 – Jan 2025",
+        "highlights": [
+            "Optimized trading platform processing 10M+ daily transactions with sub-50ms latency",
+            "Engineered event-driven microservices handling 5M+ daily events with 99.99% reliability",
+            "Spearheaded MySQL optimization achieving 60% faster queries while scaling to 10x traffic"
+        ]
+    },
+    {
+        "id": "xlysi-intern",
+        "company": "XLYSI LLC",
+        "position": "Software Engineer Intern",
+        "location": "Chicago, IL",
+        "period": "Jun 2022 – Dec 2022",
+        "highlights": [
+            "Developed enterprise REST APIs supporting 1000+ concurrent users",
+            "Created monitoring dashboards improving fraud detection by 35%"
+        ]
+    }
+]
