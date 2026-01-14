@@ -166,6 +166,13 @@ portfolio-3d/
    - Your site will be live in ~2 minutes
    - You'll get a URL like `your-portfolio.vercel.app`
 
+### Custom Domain (Optional)
+
+1. Go to your **Vercel Dashboard** > **Settings** > **Domains**
+2. Enter your domain (e.g., `yourname.com`) and click **Add**
+3. Follow the DNS instructions (add A record or CNAME)
+4. Wait for it to verify (usually minutes)
+
 ## What I Learned
 
 ### Day 1-2: Setup & Learning 3D Basics
