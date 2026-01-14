@@ -26,20 +26,18 @@ A clean, interactive portfolio featuring a frosted glass 3D centerpiece, One Pie
 ### Installation
 
 1. **Clone this repository**
-   \`\`\`bash
-   git clone https://github.com/abhinavgontu/portfolio-3d.git
-   cd portfolio-3d
-   \`\`\`
+
+   **git** clone https://github.com/abhinavgontu/portfolio-3d.git
+   
+   **cd** portfolio-3d
 
 2. **Install dependencies**
-   \`\`\`bash
-   npm install
-   \`\`\`
+
+   **npm** install
 
 3. **Start the development server**
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+
+   **npm** run dev
 
 4. **Open your browser** to [http://localhost:3000](http://localhost:3000)
 
@@ -54,25 +52,35 @@ A clean, interactive portfolio featuring a frosted glass 3D centerpiece, One Pie
 
 ## Project Structure
 
-\`\`\`
-portfolio-3d/
-├── app/                    # Next.js App Router pages
-├── components/
-│   ├── 3d/                 # Three.js 3D components
-│   └── ui/                 # UI components
-├── lib/
-│   ├── data/               # Static content (projects.json)
-│   └── hooks/              # Custom React hooks
-└── public/                 # Static assets
-\`\`\`
+**portfolio-3d/**
+├── **app/** (Next.js App Router pages)
+├── **components/**
+│   ├── **3d/** (Three.js 3D components)
+│   └── **ui/** (UI components)
+├── **lib/**
+│   ├── **data/** (Static content)
+│   └── **hooks/** (Custom React hooks)
+└── **public/** (Static assets)
 
 ## Deployment
 
 ### Deploy to Vercel
 
-1. Push your code to a GitHub repository.
-2. Import the project on [Vercel](https://vercel.com).
-3. Click **Deploy**.
+1. **Push your code to GitHub**
+
+   **git** add .
+   
+   **git** commit -m "Ready for deployment"
+   
+   **git** push origin main
+
+2. **Connect to Vercel**
+
+   Go to [Vercel](https://vercel.com) and import your repository.
+
+3. **Deploy**
+
+   Click **Deploy**. Your site will be live in minutes.
 
 ### Custom Domain (Optional)
 
