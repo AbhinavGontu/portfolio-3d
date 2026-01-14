@@ -1,5 +1,25 @@
 [
     {
+        "id": "3d-portfolio",
+        "title": "3D Interactive Portfolio Website",
+        "description": "Built a minimalist 3D portfolio using React Three Fiber and Next.js, featuring frosted glass geometries and smooth animations. Learned WebGL fundamentals and performance optimization techniques.",
+        "tags": [
+            "Next.js",
+            "Three.js",
+            "React",
+            "TypeScript",
+            "Framer Motion"
+        ],
+        "image": "/images/portfolio-3d.jpg",
+        "link": "https://portfolio-3d.vercel.app",
+        "github": "https://github.com/abhinavgontu/portfolio-3d",
+        "featured": true,
+        "metrics": {
+            "timeline": "5 days",
+            "performance": "60fps rendering"
+        }
+    },
+    {
         "id": "eventual-consistency",
         "title": "Eventual Consistency Framework",
         "description": "Implemented SAGA pattern for distributed transactions across microservices with compensating transactions and idempotency guarantees, reducing payment failures by 18%.",

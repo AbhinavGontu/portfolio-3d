@@ -20,6 +20,7 @@ import { Timeline } from "@/components/ui/Timeline";
 import { HeroObject } from "@/components/3d/HeroObject";
 import { ParticleSystem } from "@/components/3d/ParticleSystem";
 import { FloatingElements } from "@/components/3d/FloatingElements";
+import { OnePieceElements } from "@/components/3d/OnePieceElements";
 import projects from "@/lib/data/projects.json";
 import experience from "@/lib/data/experience.json";
 
@@ -80,6 +81,7 @@ export default function Home() {
         <HeroObject />
         <ParticleSystem />
         <FloatingElements />
+        <OnePieceElements />
       </Scene>
 
       {/* Hero Section */}
@@ -103,28 +105,23 @@ export default function Home() {
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-foreground/80 mb-8"
-            >
-              Software Engineer | Full Stack Developer
-            </motion.p>
-
-            <motion.p
-              variants={fadeInUp}
               className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto"
             >
               Building high-scale distributed platforms with React, Next.js, TypeScript, and cloud architecture.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center">
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-8 justify-center">
               <Link
                 href="/projects"
-                className="px-8 py-3 bg-primary-500 hover:bg-primary-600 rounded-full text-white font-semibold transition-colors"
+                className="min-w-[200px] px-12 py-4 bg-primary-500 hover:bg-primary-600 text-white font-semibold transition-colors shadow-lg hover:shadow-xl text-center"
+                style={{ borderRadius: '16px' }}
               >
                 View Projects
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-3 glass-effect hover:bg-white/10 rounded-full font-semibold transition-all"
+                className="min-w-[200px] px-12 py-4 glass-effect hover:bg-white/10 font-semibold transition-all shadow-lg hover:shadow-xl text-center"
+                style={{ borderRadius: '16px' }}
               >
                 Get in Touch
               </Link>

@@ -7,13 +7,6 @@
   --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +44,7 @@ body {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -65,13 +59,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .glass-effect {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   .gradient-text {
     background: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
     -webkit-background-clip: text;

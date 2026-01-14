@@ -7,6 +7,7 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import { HeroObject } from "@/components/3d/HeroObject";
 import { ParticleSystem } from "@/components/3d/ParticleSystem";
 import { FloatingElements } from "@/components/3d/FloatingElements";
+import { OnePieceElements } from "@/components/3d/OnePieceElements";
 import projects from "@/lib/data/projects.json";
 
 const Scene = dynamic(() => import("@/components/3d/Scene").then((mod) => ({ default: mod.Scene })), {
@@ -27,6 +28,7 @@ export default function ProjectsPage() {
                 <HeroObject />
                 <ParticleSystem />
                 <FloatingElements />
+                <OnePieceElements />
             </Scene>
 
             {/* Projects Section */}
